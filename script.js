@@ -41,12 +41,28 @@ const personalMovieDB = {
             console.log(personalMovieDB);
         }
     },
+    toggleVisibleMyDB: function(){
+        if (personalMovieDB.private) {
+            personalMovieDB.private = false;
+        } else {
+            personalMovieDB.private = true;
+        }
+    },
     writeYourGenres: function() {
         for (let i = 1; i <= 3; i++) {
             const genre = prompt(`Sizin xosunuza gelen ${i}-ci janr?`);
-            personalMovieDB.genres[i-1] = genre;
-            
+
+            if (genre == '' || genre == null) {
+                console.log('Sehv bas verdi');
+                i--;
+            } else {
+                personalMovieDB.genres[i-1] = genre;
+            }
         }
+
+        personalMovieDB.genres.forEach((item, i) => {
+            console.log(`Xosunuza gelen janr ${i+1}: ${item}`);
+        });
     }
 }
 
