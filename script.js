@@ -5,10 +5,10 @@ const personalMovieDB = {
     genres: [],
     private: false,
     start: function() {
-        numberOfFilms = +prompt('Neche filme baxmisiniz?');
+        personalMovieDB.count = +prompt('Neche filme baxmisiniz?');
     
-        while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-            numberOfFilms = +prompt('Neche filme baxmisiniz?');
+        while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
+            personalMovieDB.count = +prompt('Neche filme baxmisiniz?');
         }
     },
     rememberMyFilms: function() {
